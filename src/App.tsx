@@ -151,7 +151,36 @@ function Field({
 
 /* ───────── app ───────── */
 
+const SUBMISSIONS_OPEN = false;
+
 export default function App() {
+  if (!SUBMISSIONS_OPEN) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f4ff 0%, #fafafa 100%)", padding: "2rem", fontFamily: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif' }}>
+        <div style={{ background: "#fff", borderRadius: 24, border: "1px solid #e0e7ff", padding: "3rem 2.5rem", maxWidth: 480, width: "100%", textAlign: "center", boxShadow: "0 4px 24px rgba(99,102,241,0.08)" }}>
+          <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#f0fdf4", border: "1px solid #bbf7d0", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </div>
+          <h1 style={{ fontSize: 22, fontWeight: 600, color: "#1e293b", margin: "0 0 0.75rem" }}>Submissions are now closed</h1>
+          <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "0 0 2rem" }}>
+            Thank you to everyone who submitted a department name. We received your entries and the naming committee has completed its review.
+          </p>
+          
+            href="https://ls-renaming-lets-vote-bubj.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-block", background: "#4f46e5", color: "#fff", textDecoration: "none", fontSize: 15, fontWeight: 500, padding: "0.7rem 1.75rem", borderRadius: 12 }}
+          >
+            Cast your vote
+          </a>
+          <p style={{ fontSize: 13, color: "#94a3b8", margin: "1.25rem 0 0" }}>Voting is now open — every voice counts.</p>
+        </div>
+      </div>
+    );
+  }
+
   const [form, setForm] = useState<FormData>(empty);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
