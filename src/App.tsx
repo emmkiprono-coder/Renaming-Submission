@@ -167,7 +167,7 @@ export default function App() {
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "0 0 2rem" }}>
             Thank you to everyone who submitted a department name. We received your entries and the naming committee has completed its review.
           </p>
-          
+          <a
             href="https://ls-renaming-lets-vote-bubj.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
